@@ -9,7 +9,7 @@ public class FutuRiftControllerScript : MonoBehaviour
 {
     private FutuRiftController _controller;
 
-    [SerializeField] private string ipAddress = "";
+    [SerializeField] private string ipAddress = "127.0.0.1";
 
     [SerializeField] private int port = 6065;
 
@@ -42,25 +42,29 @@ public class FutuRiftControllerScript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             _controller.Pitch++;
         }
         
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.S))
         {
             _controller.Pitch--;
         }
         
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.D))
         {
             _controller.Pitch++;
         }
         
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.A))
         {
             _controller.Pitch--;
         }
+
+        var euler = transform.eulerAngles;
+        _controller.Pitch = -(euler.x > 180 ? euler.x - 360 : euler.x);
+        _controller.Roll = (euler.z > 180 ? euler.z - 360 : euler.z);
     }
 
     private void OnEnable()
