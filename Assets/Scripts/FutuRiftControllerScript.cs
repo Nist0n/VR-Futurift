@@ -33,7 +33,7 @@ public class FutuRiftControllerScript : MonoBehaviour
     {
         var euler = transform.eulerAngles;
         _controller.Pitch = (euler.x > 180 ? euler.x - 360 : euler.x);
-        _controller.Roll = -(euler.z > 180 ? euler.z - 360 : euler.z);
+        _controller.Roll = -(euler.y > 180 ? euler.y - 360 : euler.y);
     }
 
     private void OnEnable()
