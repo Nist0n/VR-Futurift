@@ -21,47 +21,16 @@ public class FutuRiftControllerScript : MonoBehaviour
 
     private void Awake()
     {
-        var udpOptions = new UdpOptions()
-        {
-            ip = ipAddress,
-            port = port
-        };
-
-        var futuRiftOptions = new FutuRiftOptions()
-        {
-            interval = interval
-        };
-
         _controller =
-            new FutuRiftController(dataSender: new UdpPortSender(udpOptions), futuRiftOptions: futuRiftOptions)
+            new FutuRiftController(new UdpPortSender(new UdpOptions()
             {
-                Pitch = initialPitch,
-                Roll = initialRoll
-            };
+                ip = ipAddress,
+                port = port
+            }));
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            _controller.Pitch++;
-        }
-        
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            _controller.Pitch--;
-        }
-        
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            _controller.Pitch++;
-        }
-        
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            _controller.Pitch--;
-        }
-
         var euler = transform.eulerAngles;
         _controller.Pitch = -(euler.x > 180 ? euler.x - 360 : euler.x);
         _controller.Roll = (euler.z > 180 ? euler.z - 360 : euler.z);
