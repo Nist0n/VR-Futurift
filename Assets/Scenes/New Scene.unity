@@ -879,6 +879,7 @@ GameObject:
   - component: {fileID: 1687968163}
   - component: {fileID: 1687968162}
   - component: {fileID: 1687968164}
+  - component: {fileID: 1687968165}
   m_Layer: 0
   m_Name: Dolly Cart
   m_TagString: Untagged
@@ -936,6 +937,28 @@ MonoBehaviour:
   initialPitch: 0
   initialRoll: 0
   interval: 100
+--- !u!95 &1687968165
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687968161}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 09ee998e74bb435429f833cd20c55761, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2045929280
 GameObject:
   m_ObjectHideFlags: 0
