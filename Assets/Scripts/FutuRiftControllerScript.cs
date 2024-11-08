@@ -13,12 +13,6 @@ public class FutuRiftControllerScript : MonoBehaviour
 
     [SerializeField] private int port = 6065;
 
-    [SerializeField] private float initialPitch = 0.0f;
-    
-    [SerializeField] private float initialRoll = 0.0f;
-    
-    [SerializeField] private int interval = 100;
-
     private void Awake()
     {
         _controller =
