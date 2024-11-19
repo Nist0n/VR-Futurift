@@ -1,3 +1,4 @@
+using Audio;
 using UnityEngine;
 
 namespace Config
@@ -23,6 +24,7 @@ namespace Config
         
         void Start()
         {
+            AudioManager.Instance.PlayMusic("Test");
             Time.timeScale = 0;
         }
     }

@@ -1,16 +1,12 @@
+using System;
 using UnityEngine;
 
-public class Sound : MonoBehaviour
+namespace Audio
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [Serializable]
+    public class Sound
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public string ClipName;
+        public AudioClip Clip;
     }
 }
