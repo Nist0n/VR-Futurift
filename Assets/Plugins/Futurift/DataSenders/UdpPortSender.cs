@@ -4,7 +4,7 @@ using Futurift.Options;
 
 namespace Futurift.DataSenders
 {
-    public class UdpPortSender : IDataSender
+    internal class UdpPortSender : IDataSender
     {
         public bool IsConnected => true;
 
